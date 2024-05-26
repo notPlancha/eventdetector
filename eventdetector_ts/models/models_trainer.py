@@ -140,7 +140,7 @@ class ModelTrainer:
 
         config_dict["models"] = list(self.best_models.keys())
 
-    def save_best_models(self, output_dir: str) -> None:
+    def save_best_models(self, output_dir: str) -> None: 
         """
         Save the best models to the specified output directory.
 
@@ -156,6 +156,7 @@ class ModelTrainer:
             logger_models.info(f"Current model to be saved on the disk is {model_name}")
             path = os.path.join(output_dir, MODELS_DIR)
             # Save the model to the specified directory
+            model_name = model_name + ".keras"
             model_path = os.path.join(path, model_name)
             model.save(model_path)
         logger_models.info("Models saved successfully.")
